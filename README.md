@@ -15,7 +15,7 @@ import django
 print(django.get_version())
 PY
    ```
-   Se já houver saída com a versão, você pode pular a instalação. Caso contrário, tente instalar as dependências:
+   Se já houver saída com a versão, você pode pular a instalação. Caso contrário, instale as dependências (versões fixadas para facilitar o uso em ambientes restritos):
    ```bash
    pip install -r requirements.txt
    ```
@@ -23,7 +23,7 @@ PY
    ```bash
    python manage.py migrate
    ```
-4. Executar o servidor de desenvolvimento:
+4. Executar o servidor de desenvolvimento (o domínio raiz já redireciona para o checkout):
    ```bash
    python manage.py runserver
    ```

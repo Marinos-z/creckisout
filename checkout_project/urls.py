@@ -6,8 +6,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("checkout/", include("checkout.urls")),
-    path("", RedirectView.as_view(pattern_name="checkout", permanent=False)),
+    path(
+        "checkout/",
+        include(("checkout.urls", "checkout"), namespace="checkout"),
+    ),
+    # Leva visitantes diretamente ao fluxo principal de checkout.
+    path("", RedirectView.as_view(pattern_name="checkout:checkout", permanent=False)),
 ]
 
 if settings.DEBUG:
